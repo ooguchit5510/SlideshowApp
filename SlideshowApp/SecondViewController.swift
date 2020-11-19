@@ -6,21 +6,14 @@
 //  Copyright © 2020 taiga.ooguchi. All rights reserved.
 //
 
-protocol ImageSetprotocol {
-    func imageSet(imageNo: Int)
-}
-
 import UIKit
 
 class SecondViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    var delegate: ImageSetprotocol?
-    
     var imageName: String!
-    var imageNo: Int!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,11 +21,8 @@ class SecondViewController: UIViewController {
         
     }
     
-
     @IBAction func back(_ sender: Any) {
-        delegate?.imageSet(imageNo: imageNo)
         self.dismiss(animated: true, completion: nil)
     }
-    
 
 }
